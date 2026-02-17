@@ -6,23 +6,23 @@ import { Briefcase, Globe, Lightbulb, Users } from "lucide-react"
 const highlights = [
   {
     icon: Briefcase,
-    label: "5+ Years Experience",
-    description: "Building production-grade web applications",
+    label: "2+ Years Experience",
+    description: "Delivering enterprise-grade front-end solutions",
   },
   {
     icon: Globe,
-    label: "Remote-First",
-    description: "Collaborated with distributed teams worldwide",
+    label: "Hybrid & Remote",
+    description: "Collaborating with on-site and distributed teams",
   },
   {
     icon: Lightbulb,
-    label: "Problem Solver",
-    description: "Turning complex requirements into elegant solutions",
+    label: "Multi-Platform",
+    description: "WordPress, Power Pages, React.js, and CMS expertise",
   },
   {
     icon: Users,
-    label: "Team Player",
-    description: "Mentoring juniors and leading frontend teams",
+    label: "Cross-Functional",
+    description: "Partnering with designers and backend engineers",
   },
 ]
 
@@ -34,30 +34,33 @@ export function AboutSection() {
           About Me
         </p>
         <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
-          Passionate about crafting exceptional web experiences
+          Building responsive, user-centered web interfaces
         </h2>
       </div>
 
       <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
         <div className="flex-1">
           <p className="mb-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
-            I{"'"}m a senior frontend developer with a deep passion for building
-            interfaces that are not only beautiful but also accessible,
-            performant, and scalable. My journey started with vanilla HTML and
-            CSS, and I{"'"}ve since become proficient in the modern React
-            ecosystem.
+            I{"'"}m a Front-End Developer and Associate Engineer based in
+            Islamabad, Pakistan, with a strong foundation in building
+            responsive, mobile-first web interfaces. My journey started with
+            HTML and CSS, and I{"'"}ve since expanded into JavaScript, Bootstrap,
+            Tailwind CSS, React.js, and various CMS platforms.
           </p>
           <p className="mb-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Currently, I work as a Senior Frontend Engineer where I lead the
-            development of component libraries, implement design systems, and
-            optimize web performance. I believe great software comes from
-            empathy{"—"}understanding both user needs and developer experience.
+            Currently at GuruGroup, I develop and maintain enterprise-grade UI
+            solutions across multiple projects{"—"}from customizing Microsoft
+            Power Pages components to building React.js interfaces and
+            WordPress themes. I take pride in delivering cross-browser
+            compatible, performance-optimized code that faithfully translates
+            design intent into production.
           </p>
           <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
-            When I{"'"}m not coding, you{"'"}ll find me contributing to
-            open-source projects, writing technical articles, or exploring new
-            frontend technologies. I{"'"}m always looking for interesting
-            challenges and opportunities to grow.
+            I{"'"}m passionate about writing clean, maintainable code and
+            continuously expanding my skill set. Whether it{"'"}s implementing
+            SEO best practices, optimizing page speed, or architecting
+            reusable components, I{"'"}m always looking for ways to deliver
+            better user experiences.
           </p>
         </div>
 

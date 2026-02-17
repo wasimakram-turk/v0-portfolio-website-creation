@@ -1,6 +1,6 @@
 "use client"
 
-import { Code2, Github, Linkedin, Twitter, Heart } from "lucide-react"
+import { Code2, Linkedin, Heart } from "lucide-react"
 
 const footerLinks = [
   { label: "About", href: "#about" },
@@ -11,9 +11,11 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/wasim-akram-turk",
+  },
 ]
 
 export function Footer() {
@@ -31,11 +33,11 @@ export function Footer() {
             >
               <Code2 className="h-5 w-5 text-primary" />
               <span className="text-base font-semibold tracking-tight">
-                Alex Chen
+                Wasim Akram
               </span>
             </a>
             <p className="text-sm text-muted-foreground">
-              Senior Frontend Developer
+              Front-End Developer & Associate Engineer
             </p>
           </div>
 
@@ -70,7 +72,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-border pt-6">
           <p className="flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
-            {currentYear} Alex Chen. Built with
+            {currentYear} Wasim Akram. Built with
             <Heart className="h-3 w-3 text-primary" />
             using Next.js & Tailwind CSS
           </p>

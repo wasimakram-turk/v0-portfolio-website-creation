@@ -47,7 +47,7 @@ export function Header() {
         >
           <Code2 className="h-6 w-6 text-primary" />
           <span className="text-lg font-semibold tracking-tight">
-            {"AC"}
+            {"WA"}
           </span>
         </a>
 

@@ -4,39 +4,39 @@ import { SectionWrapper } from "./section-wrapper"
 
 const skillCategories = [
   {
-    title: "Frontend Core",
+    title: "Front-End Development",
     skills: [
-      { name: "React / Next.js", level: 95 },
-      { name: "TypeScript", level: 92 },
-      { name: "JavaScript (ES6+)", level: 95 },
-      { name: "HTML5 / CSS3", level: 98 },
+      { name: "HTML5 / CSS3", level: 95 },
+      { name: "Bootstrap", level: 92 },
+      { name: "JavaScript (ES6)", level: 70 },
+      { name: "Tailwind CSS", level: 65 },
     ],
   },
   {
-    title: "Styling & UI",
+    title: "Frameworks & Platforms",
     skills: [
-      { name: "Tailwind CSS", level: 93 },
-      { name: "CSS-in-JS", level: 88 },
-      { name: "Sass / SCSS", level: 90 },
-      { name: "Design Systems", level: 85 },
+      { name: "React.js", level: 60 },
+      { name: "Microsoft Power Pages", level: 80 },
+      { name: "WordPress (Themes & Plugins)", level: 85 },
+      { name: "Contentstack CMS", level: 75 },
     ],
   },
   {
-    title: "Tools & Testing",
+    title: "SEO & Performance",
     skills: [
-      { name: "Git / GitHub", level: 92 },
-      { name: "Jest / RTL", level: 85 },
-      { name: "Cypress / Playwright", level: 80 },
-      { name: "Webpack / Vite", level: 85 },
+      { name: "On-Page SEO", level: 85 },
+      { name: "Technical SEO", level: 80 },
+      { name: "Performance Optimization", level: 78 },
+      { name: "Cross-Browser Compatibility", level: 90 },
     ],
   },
   {
-    title: "Other",
+    title: "Tools & Workflow",
     skills: [
-      { name: "Node.js / Express", level: 78 },
-      { name: "REST / GraphQL", level: 82 },
-      { name: "CI/CD Pipelines", level: 80 },
-      { name: "Figma / Design", level: 75 },
+      { name: "VS Code", level: 92 },
+      { name: "Git", level: 65 },
+      { name: "Chrome DevTools", level: 88 },
+      { name: "UI/UX Implementation", level: 82 },
     ],
   },
 ]

@@ -1,44 +1,23 @@
 "use client"
 
 import { SectionWrapper } from "./section-wrapper"
-import { ExternalLink } from "lucide-react"
+import { Building2, Calendar } from "lucide-react"
 
 const experiences = [
   {
-    role: "Senior Frontend Engineer",
-    company: "TechCorp Inc.",
-    companyUrl: "#",
-    period: "2023 - Present",
+    role: "Associate Engineer",
+    company: "GuruGroup",
+    period: "April 2024 - Present",
     description:
-      "Leading frontend architecture for a SaaS platform serving 50K+ users. Spearheaded migration from CRA to Next.js, improving performance scores by 40%. Built and maintained a shared component library used across 5 products.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Storybook"],
-  },
-  {
-    role: "Frontend Developer",
-    company: "Digital Agency Co.",
-    companyUrl: "#",
-    period: "2021 - 2023",
-    description:
-      "Developed responsive web applications for enterprise clients across fintech, healthcare, and e-commerce. Implemented complex data visualization dashboards and optimized Core Web Vitals, achieving 95+ Lighthouse scores.",
-    technologies: ["React", "TypeScript", "GraphQL", "Styled Components", "Jest"],
-  },
-  {
-    role: "Junior Frontend Developer",
-    company: "StartupHub",
-    companyUrl: "#",
-    period: "2019 - 2021",
-    description:
-      "Built consumer-facing features for a social platform with 100K+ MAU. Collaborated closely with designers to implement pixel-perfect UIs and contributed to establishing frontend best practices and code review processes.",
-    technologies: ["React", "JavaScript", "Redux", "SCSS", "Cypress"],
-  },
-  {
-    role: "Web Developer Intern",
-    company: "CreativeStudio",
-    companyUrl: "#",
-    period: "2019 (6 months)",
-    description:
-      "Assisted in building responsive marketing websites and landing pages. Gained hands-on experience with modern JavaScript frameworks and version control workflows.",
-    technologies: ["HTML", "CSS", "JavaScript", "Vue.js", "Git"],
+      "Developing and maintaining responsive, mobile-first web interfaces for enterprise clients across multiple concurrent projects.",
+    highlights: [
+      "Build and maintain responsive, mobile-first web interfaces using HTML5, CSS3, and Bootstrap, ensuring UI consistency across all devices",
+      "Customize and style Microsoft Power Pages components to support low-code business solutions",
+      "Contribute to React.js component development, handling state management and building reusable UI modules",
+      "Ensure cross-browser compatibility across Chrome, Firefox, and Edge for all deliverables",
+      "Collaborate closely with designers and backend teams to translate UI requirements into production-ready code",
+      "Work in a hybrid setup, coordinating with remote and on-site teams across multiple projects simultaneously",
+    ],
   },
 ]
 
@@ -50,61 +29,56 @@ export function ExperienceSection() {
           Experience
         </p>
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
-          Where I{"'"}ve worked
+          Professional journey
         </h2>
         <p className="max-w-2xl text-base text-muted-foreground lg:text-lg">
-          A timeline of my professional journey, from building my first
-          components to leading frontend architecture.
+          Building enterprise-grade front-end solutions and delivering
+          high-quality web experiences for diverse clients.
         </p>
       </div>
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-0 top-0 hidden h-full w-px bg-border md:left-[140px] md:block" />
+        <div className="absolute top-0 bottom-0 left-4 w-px bg-border md:left-8" />
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="group relative flex flex-col gap-3 md:flex-row md:gap-12">
-              {/* Period */}
-              <div className="flex-shrink-0 md:w-[140px] md:text-right">
-                <span className="text-sm font-mono text-muted-foreground">
-                  {exp.period}
-                </span>
+            <div key={index} className="group relative flex gap-6 md:gap-10">
+              {/* Timeline dot */}
+              <div className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-primary bg-background md:h-16 md:w-16">
+                <Building2 className="h-3.5 w-3.5 text-primary md:h-6 md:w-6" />
               </div>
 
-              {/* Timeline dot */}
-              <div className="absolute left-[-5px] top-1.5 hidden h-[10px] w-[10px] rounded-full border-2 border-primary bg-background transition-colors group-hover:bg-primary md:left-[136px] md:block" />
-
-              {/* Content */}
+              {/* Content card */}
               <div className="flex-1 rounded-xl border border-border bg-card p-6 transition-all group-hover:border-primary/30 group-hover:shadow-md">
-                <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {exp.role}
-                  </h3>
-                  <span className="hidden text-muted-foreground sm:inline">
-                    {"·"}
-                  </span>
-                  <a
-                    href={exp.companyUrl}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                  >
-                    {exp.company}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
+                <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {exp.role}
+                    </h3>
+                    <p className="text-sm font-medium text-primary">
+                      {exp.company}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {exp.period}
+                  </div>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                   {exp.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                <ul className="flex flex-col gap-2">
+                  {exp.highlights.map((highlight, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2.5 text-sm text-muted-foreground"
                     >
-                      {tech}
-                    </span>
+                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                      {highlight}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ))}

@@ -26,17 +26,19 @@ export function HeroSection() {
 
             <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground opacity-0 animate-fade-in-up animation-delay-200 md:text-5xl lg:text-6xl text-balance">
               Hi, I{"'"}m{" "}
-              <span className="text-primary">Alex Chen</span>
+              <span className="text-primary">Wasim Akram</span>
             </h1>
 
             <p className="mb-4 text-xl font-medium text-muted-foreground opacity-0 animate-fade-in-up animation-delay-200 md:text-2xl">
-              Senior Frontend Developer
+              Associate Engineer & Front-End Developer
             </p>
 
             <p className="mb-8 max-w-xl text-base leading-relaxed text-muted-foreground opacity-0 animate-fade-in-up animation-delay-400 lg:text-lg">
-              I craft pixel-perfect, accessible, and high-performance web
-              experiences. Specializing in React, Next.js, and TypeScript with
-              5+ years of building products that users love.
+              I build responsive, high-performance web interfaces that deliver
+              seamless user experiences across every device. With 2+ years of
+              hands-on expertise in HTML5, CSS3, Bootstrap, JavaScript, and
+              React.js, I turn designs into pixel-perfect, production-ready
+              solutions.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-600 lg:justify-start">

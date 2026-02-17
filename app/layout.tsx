@@ -15,22 +15,26 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Alex Chen | Senior Frontend Developer',
+  title: 'Wasim Akram | Front-End Developer & Associate Engineer',
   description:
-    'Portfolio of Alex Chen, a senior frontend developer specializing in building exceptional digital experiences with React, Next.js, and TypeScript.',
+    'Portfolio of Wasim Akram, a front-end developer and associate engineer building responsive, high-performance web interfaces with HTML5, CSS3, Bootstrap, JavaScript, and React.js.',
   keywords: [
     'frontend developer',
+    'html5',
+    'css3',
+    'bootstrap',
+    'javascript',
     'react',
-    'next.js',
-    'typescript',
+    'wordpress',
+    'power pages',
     'portfolio',
     'web developer',
   ],
-  authors: [{ name: 'Alex Chen' }],
+  authors: [{ name: 'Wasim Akram' }],
   openGraph: {
-    title: 'Alex Chen | Senior Frontend Developer',
+    title: 'Wasim Akram | Front-End Developer & Associate Engineer',
     description:
-      'Senior frontend developer specializing in building exceptional digital experiences.',
+      'Front-end developer specializing in responsive, mobile-first web interfaces and enterprise UI solutions.',
     type: 'website',
   },
   icons: {

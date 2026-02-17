@@ -2,12 +2,14 @@
 
 import { useState } from "react"
 import { SectionWrapper } from "./section-wrapper"
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, MapPin, Send, Linkedin } from "lucide-react"
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/wasim-akram-turk",
+  },
 ]
 
 export function ContactSection() {
@@ -127,15 +129,15 @@ export function ContactSection() {
             </h3>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:alex@example.com"
+                href="mailto:eng.wasimakram@live.com"
                 className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-4 w-4 text-primary" />
-                alex@example.com
+                eng.wasimakram@live.com
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
-                San Francisco, CA
+                Islamabad, Pakistan
               </div>
             </div>
           </div>
@@ -163,8 +165,8 @@ export function ContactSection() {
               Currently open to
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Full-time positions, freelance projects, and consulting
-              opportunities.
+              Full-time positions, contract roles, and freelance front-end
+              development projects.
             </p>
           </div>
         </div>

@@ -2,44 +2,40 @@
 
 import Image from "next/image"
 import { SectionWrapper } from "./section-wrapper"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 const projects = [
   {
-    title: "ShopFlow",
+    title: "Ultimate Works (Enterprise HR & Payroll)",
     description:
-      "A modern e-commerce platform with real-time inventory management, dynamic filtering, and a seamless checkout flow. Built for performance with SSR and optimistic UI updates.",
+      "Developed the front-end UI for a multi-module enterprise HR and payroll application. Designed dashboards and role-specific pages to streamline workforce management across the organization.",
     image: "/images/project-1.jpg",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+    technologies: ["React.js", "Bootstrap", "Custom CSS"],
     liveUrl: "#",
-    githubUrl: "#",
   },
   {
-    title: "InsightDash",
+    title: "Trillora (Power Pages Solution)",
     description:
-      "Analytics dashboard for SaaS metrics with interactive charts, real-time data streaming, and customizable widget layouts. Features dark mode and responsive design.",
+      "Implemented the front-end UI for a packaging company's business data visualization platform. Customized Microsoft Power Pages with responsive layouts and clean data presentation.",
     image: "/images/project-2.jpg",
-    technologies: ["React", "D3.js", "WebSocket", "Styled Components"],
+    technologies: ["Power Pages", "HTML", "CSS", "Bootstrap"],
     liveUrl: "#",
-    githubUrl: "#",
   },
   {
-    title: "ConnectHub",
+    title: "WindowNation (USA)",
     description:
-      "Social platform with real-time messaging, user feeds, and content discovery. Implements infinite scroll, image optimization, and accessibility-first design.",
+      "Developed custom WordPress front-end pages for a leading US-based window and door company. Coordinated closely with backend developers to ensure seamless layout integration.",
     image: "/images/project-3.jpg",
-    technologies: ["Next.js", "GraphQL", "Prisma", "PostgreSQL"],
+    technologies: ["WordPress", "HTML", "CSS", "Bootstrap"],
     liveUrl: "#",
-    githubUrl: "#",
   },
   {
-    title: "TaskBoard Pro",
+    title: "Corporate Websites Portfolio",
     description:
-      "Kanban-style project management app with drag-and-drop, real-time collaboration, and team workspaces. Built with a focus on smooth animations and keyboard navigation.",
+      "Built and maintained corporate websites for international clients including CecilHub (Australia) and Crystal Consulting Group (UAE), as well as multiple marketing sites across the GuruGroup network.",
     image: "/images/project-4.jpg",
-    technologies: ["React", "TypeScript", "DnD Kit", "Supabase"],
+    technologies: ["WordPress", "HTML", "CSS", "Bootstrap", "Tailwind"],
     liveUrl: "#",
-    githubUrl: "#",
   },
 ]
 
@@ -54,8 +50,8 @@ export function ProjectsSection() {
           Selected work
         </h2>
         <p className="max-w-2xl text-base text-muted-foreground lg:text-lg">
-          A selection of projects that showcase my approach to building
-          thoughtful, well-crafted digital products.
+          Enterprise applications, CMS platforms, and corporate websites
+          delivered for clients across the USA, Australia, and the UAE.
         </p>
       </div>
 
@@ -104,14 +100,7 @@ export function ProjectsSection() {
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                 >
                   <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </a>
-                <a
-                  href={project.githubUrl}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Github className="h-4 w-4" />
-                  Source
+                  View Project
                 </a>
               </div>
             </div>

@@ -5,19 +5,19 @@ import { GraduationCap, Award } from "lucide-react"
 
 const education = [
   {
-    degree: "B.Sc. Computer Science",
-    institution: "University of Technology",
-    period: "2015 - 2019",
+    degree: "BS in Computer Science",
+    institution: "Federal Urdu University, Islamabad, Pakistan",
+    period: "2011",
     description:
-      "Graduated with honors. Focused on software engineering, algorithms, and human-computer interaction. Final thesis on progressive web application performance optimization.",
+      "Majored in Software Systems. Final year project: Medical Information Exchange (MIE) built with .NET Framework 4.0 using ASP.NET and C#.NET.",
   },
 ]
 
 const certifications = [
-  "Meta Frontend Developer Professional Certificate",
-  "AWS Certified Cloud Practitioner",
-  "Google UX Design Certificate",
-  "JavaScript Algorithms & Data Structures (freeCodeCamp)",
+  "Responsive Web Design & Mobile-First Development",
+  "Cross-Browser Compatibility Testing & Optimization",
+  "On-Page & Technical SEO Implementation",
+  "UI/UX Implementation & Design Collaboration",
 ]
 
 export function EducationSection() {
@@ -28,7 +28,7 @@ export function EducationSection() {
           Education
         </p>
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
-          Education & Certifications
+          Education & Core Competencies
         </h2>
       </div>
 
@@ -68,7 +68,7 @@ export function EducationSection() {
         <div>
           <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
             <Award className="h-5 w-5 text-primary" />
-            Certifications
+            Core Competencies
           </h3>
           <div className="rounded-xl border border-border bg-card p-6">
             <ul className="flex flex-col gap-3">
