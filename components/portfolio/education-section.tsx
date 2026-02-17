@@ -1,0 +1,90 @@
+"use client"
+
+import { SectionWrapper } from "./section-wrapper"
+import { GraduationCap, Award } from "lucide-react"
+
+const education = [
+  {
+    degree: "B.Sc. Computer Science",
+    institution: "University of Technology",
+    period: "2015 - 2019",
+    description:
+      "Graduated with honors. Focused on software engineering, algorithms, and human-computer interaction. Final thesis on progressive web application performance optimization.",
+  },
+]
+
+const certifications = [
+  "Meta Frontend Developer Professional Certificate",
+  "AWS Certified Cloud Practitioner",
+  "Google UX Design Certificate",
+  "JavaScript Algorithms & Data Structures (freeCodeCamp)",
+]
+
+export function EducationSection() {
+  return (
+    <SectionWrapper id="education" className="bg-secondary/30">
+      <div className="mb-12">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
+          Education
+        </p>
+        <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl text-balance">
+          Education & Certifications
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        {/* Education */}
+        <div>
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <GraduationCap className="h-5 w-5 text-primary" />
+            Academic Background
+          </h3>
+          <div className="flex flex-col gap-4">
+            {education.map((edu, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-border bg-card p-6"
+              >
+                <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h4 className="text-base font-semibold text-foreground">
+                    {edu.degree}
+                  </h4>
+                  <span className="text-xs font-mono text-muted-foreground">
+                    {edu.period}
+                  </span>
+                </div>
+                <p className="mb-3 text-sm font-medium text-primary">
+                  {edu.institution}
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {edu.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div>
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <Award className="h-5 w-5 text-primary" />
+            Certifications
+          </h3>
+          <div className="rounded-xl border border-border bg-card p-6">
+            <ul className="flex flex-col gap-3">
+              {certifications.map((cert, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-sm text-muted-foreground"
+                >
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  {cert}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
+  )
+}
