@@ -66,19 +66,19 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Profile Photo */}
           <div className="relative flex-shrink-0 opacity-0 animate-fade-in-up animation-delay-400">
-            <div className="relative h-72 w-72 overflow-hidden rounded-2xl border border-border shadow-2xl md:h-96 md:w-96">
+            <div className="relative h-72 w-72 overflow-hidden rounded-2xl border-2 border-border shadow-2xl md:h-[400px] md:w-[340px]">
               <Image
-                src="/images/hero-illustration.jpg"
-                alt="Frontend developer workspace illustration"
+                src="/images/wasim-profile.jpeg"
+                alt="Wasim Akram - Front-End Developer"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
             {/* Decorative elements */}
-            <div className="absolute -bottom-3 -right-3 h-72 w-72 rounded-2xl border border-primary/20 md:h-96 md:w-96" />
+            <div className="absolute -bottom-3 -right-3 h-72 w-72 rounded-2xl border border-primary/20 md:h-[400px] md:w-[340px]" />
           </div>
         </div>
       </div>

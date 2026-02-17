@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { SectionWrapper } from "./section-wrapper"
 import { Briefcase, Globe, Lightbulb, Users } from "lucide-react"
 
@@ -40,6 +41,24 @@ export function AboutSection() {
 
       <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
         <div className="flex-1">
+          <div className="mb-6 flex items-center gap-4">
+            <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border-2 border-primary/30">
+              <Image
+                src="/images/wasim-profile.jpeg"
+                alt="Wasim Akram"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                Wasim Akram
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Associate Engineer at GuruGroup, Islamabad
+              </p>
+            </div>
+          </div>
           <p className="mb-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
             I{"'"}m a Front-End Developer and Associate Engineer based in
             Islamabad, Pakistan, with a strong foundation in building
