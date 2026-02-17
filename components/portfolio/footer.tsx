@@ -47,7 +47,7 @@ export function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
               >
                 {link.label}
               </a>
@@ -60,7 +60,7 @@ export function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary"
                 aria-label={link.label}
               >
                 <link.icon className="h-4 w-4" />

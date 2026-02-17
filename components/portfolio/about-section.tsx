@@ -30,7 +30,7 @@ const highlights = [
 export function AboutSection() {
   return (
     <SectionWrapper id="about">
-      <div className="mb-12">
+      <div className="mb-14">
         <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
           About Me
         </p>
@@ -39,10 +39,10 @@ export function AboutSection() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+      <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
         <div className="flex-1">
-          <div className="mb-6 flex items-center gap-4">
-            <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border-2 border-primary/30">
+          <div className="mb-8 flex items-center gap-4">
+            <div className="animate-pulse-glow relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border-2 border-primary/30 ring-4 ring-primary/5">
               <Image
                 src="/images/wasim-profile.jpeg"
                 alt="Wasim Akram"
@@ -59,37 +59,43 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-          <p className="mb-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
-            I{"'"}m a Front-End Developer and Associate Engineer based in
-            Islamabad, Pakistan, with a strong foundation in building
-            responsive, mobile-first web interfaces. My journey started with
-            HTML and CSS, and I{"'"}ve since expanded into JavaScript, Bootstrap,
-            Tailwind CSS, React.js, and various CMS platforms.
-          </p>
-          <p className="mb-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Currently at GuruGroup, I develop and maintain enterprise-grade UI
-            solutions across multiple projects{"—"}from customizing Microsoft
-            Power Pages components to building React.js interfaces and
-            WordPress themes. I take pride in delivering cross-browser
-            compatible, performance-optimized code that faithfully translates
-            design intent into production.
-          </p>
-          <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
-            I{"'"}m passionate about writing clean, maintainable code and
-            continuously expanding my skill set. Whether it{"'"}s implementing
-            SEO best practices, optimizing page speed, or architecting
-            reusable components, I{"'"}m always looking for ways to deliver
-            better user experiences.
-          </p>
+
+          <div className="flex flex-col gap-5">
+            <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+              I{"'"}m a Front-End Developer and Associate Engineer based in
+              Islamabad, Pakistan, with a strong foundation in building
+              responsive, mobile-first web interfaces. My journey started with
+              HTML and CSS, and I{"'"}ve since expanded into JavaScript, Bootstrap,
+              Tailwind CSS, React.js, and various CMS platforms.
+            </p>
+            <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+              Currently at GuruGroup, I develop and maintain enterprise-grade UI
+              solutions across multiple projects{"---"}from customizing Microsoft
+              Power Pages components to building React.js interfaces and
+              WordPress themes. I take pride in delivering cross-browser
+              compatible, performance-optimized code that faithfully translates
+              design intent into production.
+            </p>
+            <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+              I{"'"}m passionate about writing clean, maintainable code and
+              continuously expanding my skill set. Whether it{"'"}s implementing
+              SEO best practices, optimizing page speed, or architecting
+              reusable components, I{"'"}m always looking for ways to deliver
+              better user experiences.
+            </p>
+          </div>
         </div>
 
-        <div className="grid flex-shrink-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:w-[380px]">
-          {highlights.map((item) => (
+        <div className="grid flex-shrink-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:w-[400px]">
+          {highlights.map((item, index) => (
             <div
               key={item.label}
-              className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
+              className="card-hover group rounded-2xl border border-border bg-card p-6 hover:border-primary/30"
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <item.icon className="mb-3 h-5 w-5 text-primary transition-transform group-hover:scale-110" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <item.icon className="h-5 w-5" />
+              </div>
               <p className="mb-1 text-sm font-semibold text-foreground">
                 {item.label}
               </p>

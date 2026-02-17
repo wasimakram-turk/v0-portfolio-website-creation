@@ -1,6 +1,7 @@
 "use client"
 
 import { SectionWrapper } from "./section-wrapper"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const skillCategories = [
   {
@@ -42,9 +43,11 @@ const skillCategories = [
 ]
 
 export function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation(0.1)
+
   return (
     <SectionWrapper id="skills" className="bg-secondary/30">
-      <div className="mb-12">
+      <div className="mb-14">
         <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
           Skills
         </p>
@@ -57,30 +60,39 @@ export function SkillsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {skillCategories.map((category) => (
+      <div ref={ref} className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {skillCategories.map((category, catIndex) => (
           <div
             key={category.title}
-            className="rounded-xl border border-border bg-card p-6"
+            className="card-hover rounded-2xl border border-border bg-card p-6 lg:p-7"
+            style={{
+              transitionDelay: `${catIndex * 100}ms`,
+            }}
           >
-            <h3 className="mb-5 text-lg font-semibold text-foreground">
+            <h3 className="mb-6 text-base font-semibold tracking-tight text-foreground lg:text-lg">
               {category.title}
             </h3>
-            <div className="flex flex-col gap-4">
-              {category.skills.map((skill) => (
+            <div className="flex flex-col gap-5">
+              {category.skills.map((skill, skillIndex) => (
                 <div key={skill.name}>
-                  <div className="mb-1.5 flex items-center justify-between">
+                  <div className="mb-2 flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">
                       {skill.name}
                     </span>
-                    <span className="text-xs font-mono text-muted-foreground">
+                    <span className="text-xs font-mono tabular-nums text-muted-foreground">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
                     <div
-                      className="h-full rounded-full bg-primary transition-all duration-700 ease-out"
-                      style={{ width: `${skill.level}%` }}
+                      className={`h-full rounded-full bg-gradient-to-r from-primary to-primary/70 ${
+                        isVisible ? "animate-skill-fill" : ""
+                      }`}
+                      style={{
+                        width: isVisible ? `${skill.level}%` : "0%",
+                        animationDelay: `${catIndex * 150 + skillIndex * 80}ms`,
+                        animationFillMode: "forwards",
+                      }}
                     />
                   </div>
                 </div>

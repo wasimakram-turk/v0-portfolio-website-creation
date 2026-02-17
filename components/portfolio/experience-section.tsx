@@ -24,7 +24,7 @@ const experiences = [
 export function ExperienceSection() {
   return (
     <SectionWrapper id="experience">
-      <div className="mb-12">
+      <div className="mb-14">
         <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
           Experience
         </p>
@@ -39,42 +39,42 @@ export function ExperienceSection() {
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute top-0 bottom-0 left-4 w-px bg-border md:left-8" />
+        <div className="absolute top-0 bottom-0 left-4 w-px bg-gradient-to-b from-primary/40 via-border to-border md:left-8" />
 
         <div className="flex flex-col gap-8">
           {experiences.map((exp, index) => (
             <div key={index} className="group relative flex gap-6 md:gap-10">
               {/* Timeline dot */}
-              <div className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-primary bg-background md:h-16 md:w-16">
+              <div className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-primary bg-background shadow-sm shadow-primary/10 md:h-16 md:w-16">
                 <Building2 className="h-3.5 w-3.5 text-primary md:h-6 md:w-6" />
               </div>
 
               {/* Content card */}
-              <div className="flex-1 rounded-xl border border-border bg-card p-6 transition-all group-hover:border-primary/30 group-hover:shadow-md">
-                <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="card-hover flex-1 rounded-2xl border border-border bg-card p-6 hover:border-primary/30 lg:p-7">
+                <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">
                       {exp.role}
                     </h3>
-                    <p className="text-sm font-medium text-primary">
+                    <p className="text-sm font-semibold text-primary">
                       {exp.company}
                     </p>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
-                    <Calendar className="h-3.5 w-3.5" />
+                  <div className="flex items-center gap-1.5 rounded-lg bg-secondary/60 px-3 py-1.5 text-xs font-mono text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
                     {exp.period}
                   </div>
                 </div>
-                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
                   {exp.description}
                 </p>
-                <ul className="flex flex-col gap-2">
+                <ul className="flex flex-col gap-3">
                   {exp.highlights.map((highlight, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
                     >
-                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-primary" />
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
                       {highlight}
                     </li>
                   ))}

@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { SectionWrapper } from "./section-wrapper"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, ArrowUpRight } from "lucide-react"
 
 const projects = [
   {
@@ -42,7 +42,7 @@ const projects = [
 export function ProjectsSection() {
   return (
     <SectionWrapper id="projects">
-      <div className="mb-12">
+      <div className="mb-14">
         <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
           Projects
         </p>
@@ -59,25 +59,30 @@ export function ProjectsSection() {
         {projects.map((project, index) => (
           <article
             key={index}
-            className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg"
+            className="card-hover group overflow-hidden rounded-2xl border border-border bg-card"
           >
             {/* Project Image */}
-            <div className="relative aspect-video overflow-hidden">
+            <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/5" />
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/0 to-foreground/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Floating action on hover */}
+              <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4">
+                <ArrowUpRight className="h-4 w-4" />
+              </div>
             </div>
 
             {/* Project Info */}
-            <div className="p-6">
-              <h3 className="mb-2 text-xl font-semibold text-foreground">
+            <div className="p-6 lg:p-7">
+              <h3 className="mb-2.5 text-lg font-semibold leading-snug text-foreground lg:text-xl">
                 {project.title}
               </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
 
@@ -86,7 +91,7 @@ export function ProjectsSection() {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+                    className="rounded-lg border border-border bg-secondary/60 px-2.5 py-1 text-xs font-medium text-secondary-foreground transition-colors group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-primary"
                   >
                     {tech}
                   </span>
@@ -94,15 +99,13 @@ export function ProjectsSection() {
               </div>
 
               {/* Links */}
-              <div className="flex items-center gap-4">
-                <a
-                  href={project.liveUrl}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  View Project
-                </a>
-              </div>
+              <a
+                href={project.liveUrl}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all duration-200 hover:gap-2.5"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                View Project
+              </a>
             </div>
           </article>
         ))}

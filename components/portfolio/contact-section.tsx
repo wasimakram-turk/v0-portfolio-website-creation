@@ -29,7 +29,7 @@ export function ContactSection() {
 
   return (
     <SectionWrapper id="contact">
-      <div className="mb-12">
+      <div className="mb-14">
         <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
           Contact
         </p>
@@ -50,7 +50,7 @@ export function ContactSection() {
             <div>
               <label
                 htmlFor="name"
-                className="mb-1.5 block text-sm font-medium text-foreground"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
                 Name
               </label>
@@ -62,14 +62,14 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormState({ ...formState, name: e.target.value })
                 }
-                className="w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20"
+                className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:shadow-sm"
                 placeholder="Your name"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="mb-1.5 block text-sm font-medium text-foreground"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
                 Email
               </label>
@@ -81,14 +81,14 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormState({ ...formState, email: e.target.value })
                 }
-                className="w-full rounded-lg border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20"
+                className="w-full rounded-xl border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:shadow-sm"
                 placeholder="you@example.com"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="mb-1.5 block text-sm font-medium text-foreground"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
                 Message
               </label>
@@ -100,13 +100,13 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormState({ ...formState, message: e.target.value })
                 }
-                className="w-full resize-none rounded-lg border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20"
+                className="w-full resize-none rounded-xl border border-input bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:shadow-sm"
                 placeholder="Tell me about your project..."
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:opacity-90 hover:shadow-md disabled:opacity-50"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-lg"
               disabled={submitted}
             >
               {submitted ? (
@@ -122,27 +122,31 @@ export function ContactSection() {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col gap-6 lg:w-[320px]">
-          <div className="rounded-xl border border-border bg-card p-6">
+        <div className="flex flex-col gap-5 lg:w-[340px]">
+          <div className="card-hover rounded-2xl border border-border bg-card p-6 hover:border-primary/30">
             <h3 className="mb-4 text-base font-semibold text-foreground">
               Contact Details
             </h3>
             <div className="flex flex-col gap-4">
               <a
                 href="mailto:eng.wasimakram@live.com"
-                className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                <Mail className="h-4 w-4 text-primary" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                  <Mail className="h-3.5 w-3.5 text-primary" />
+                </div>
                 eng.wasimakram@live.com
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                  <MapPin className="h-3.5 w-3.5 text-primary" />
+                </div>
                 Islamabad, Pakistan
               </div>
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div className="card-hover rounded-2xl border border-border bg-card p-6 hover:border-primary/30">
             <h3 className="mb-4 text-base font-semibold text-foreground">
               Find Me Online
             </h3>
@@ -151,7 +155,9 @@ export function ContactSection() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary/30 hover:bg-secondary hover:text-foreground"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                   aria-label={link.label}
                 >
                   <link.icon className="h-4 w-4" />
@@ -160,11 +166,11 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
-            <p className="text-sm font-medium text-foreground">
+          <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-6">
+            <p className="text-sm font-semibold text-foreground">
               Currently open to
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
               Full-time positions, contract roles, and freelance front-end
               development projects.
             </p>

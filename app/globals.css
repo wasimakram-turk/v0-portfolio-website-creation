@@ -15,7 +15,7 @@
   --secondary: oklch(0.96 0.005 250);
   --secondary-foreground: oklch(0.25 0.012 260);
   --muted: oklch(0.95 0.005 250);
-  --muted-foreground: oklch(0.5 0.01 260);
+  --muted-foreground: oklch(0.42 0.012 260);
   --accent: oklch(0.72 0.12 75);
   --accent-foreground: oklch(0.2 0.02 75);
   --destructive: oklch(0.577 0.245 27.325);
@@ -51,7 +51,7 @@
   --secondary: oklch(0.25 0.014 260);
   --secondary-foreground: oklch(0.92 0.005 250);
   --muted: oklch(0.25 0.014 260);
-  --muted-foreground: oklch(0.65 0.01 250);
+  --muted-foreground: oklch(0.7 0.01 250);
   --accent: oklch(0.72 0.12 75);
   --accent-foreground: oklch(0.16 0.02 75);
   --destructive: oklch(0.396 0.141 25.723);
@@ -130,7 +130,7 @@
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -138,8 +138,43 @@
   }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes skill-fill {
+  from { width: 0%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.55 0.12 195 / 0.3); }
+  50% { box-shadow: 0 0 20px 4px oklch(0.55 0.12 195 / 0.15); }
+}
+
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-skill-fill {
+  animation: skill-fill 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .animation-delay-200 {
@@ -152,4 +187,22 @@
 
 .animation-delay-600 {
   animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Premium card hover lift */
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px oklch(0 0 0 / 0.12);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 12px 40px -12px oklch(0 0 0 / 0.4);
 }
