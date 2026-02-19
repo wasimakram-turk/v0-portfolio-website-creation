@@ -6,17 +6,17 @@ const skillCategories = [
   {
     title: "Front-End Development",
     skills: [
-      { name: "HTML5 / CSS3", level: 95 },
-      { name: "Bootstrap", level: 92 },
-      { name: "JavaScript (ES6)", level: 70 },
-      { name: "Tailwind CSS", level: 65 },
+      { name: "HTML5 / CSS3", level: 90 },
+      { name: "Bootstrap", level: 88 },
+      { name: "JavaScript (ES6)", level: 30 },
+      { name: "Tailwind CSS", level: 50 },
     ],
   },
   {
     title: "Frameworks & Platforms",
     skills: [
-      { name: "React.js", level: 60 },
-      { name: "Microsoft Power Pages", level: 80 },
+      { name: "React.js", level: 35 },
+      { name: "Microsoft Power Pages", level: 60 },
       { name: "WordPress (Themes & Plugins)", level: 85 },
       { name: "Contentstack CMS", level: 75 },
     ],
@@ -24,19 +24,19 @@ const skillCategories = [
   {
     title: "SEO & Performance",
     skills: [
-      { name: "On-Page SEO", level: 85 },
-      { name: "Technical SEO", level: 80 },
-      { name: "Performance Optimization", level: 78 },
+      { name: "On-Page SEO", level: 75 },
+      { name: "Technical SEO", level: 70 },
+      { name: "Performance Optimization", level: 70 },
       { name: "Cross-Browser Compatibility", level: 90 },
     ],
   },
   {
     title: "Tools & Workflow",
     skills: [
-      { name: "VS Code", level: 92 },
+      { name: "VS Code", level: 90 },
       { name: "Git", level: 65 },
       { name: "Chrome DevTools", level: 88 },
-      { name: "UI/UX Implementation", level: 82 },
+      { name: "UI/UX Implementation", level: 95 },
     ],
   },
 ]

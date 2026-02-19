@@ -9,7 +9,7 @@ const projects = [
     title: "Ultimate Works (Enterprise HR & Payroll)",
     description:
       "Developed the front-end UI for a multi-module enterprise HR and payroll application. Designed dashboards and role-specific pages to streamline workforce management across the organization.",
-    image: "/images/project-1.jpg",
+    image: "/images/Ultimate-works/Dashboard.png",
     technologies: ["React.js", "Bootstrap", "Custom CSS"],
     liveUrl: "#",
   },
@@ -17,7 +17,7 @@ const projects = [
     title: "Trillora (Power Pages Solution)",
     description:
       "Implemented the front-end UI for a packaging company's business data visualization platform. Customized Microsoft Power Pages with responsive layouts and clean data presentation.",
-    image: "/images/project-2.jpg",
+    image: "/images/Trillora/Home.png",
     technologies: ["Power Pages", "HTML", "CSS", "Bootstrap"],
     liveUrl: "#",
   },
@@ -25,8 +25,8 @@ const projects = [
     title: "WindowNation (USA)",
     description:
       "Developed custom WordPress front-end pages for a leading US-based window and door company. Coordinated closely with backend developers to ensure seamless layout integration.",
-    image: "/images/project-3.jpg",
-    technologies: ["WordPress", "HTML", "CSS", "Bootstrap"],
+    image: "/images/WindowNation.png",
+    technologies: ["WordPress", "HTML", "CSS"],
     liveUrl: "#",
   },
   {
@@ -59,22 +59,22 @@ export function ProjectsSection() {
         {projects.map((project, index) => (
           <article
             key={index}
-            className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg"
+            className="group overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-b from-card to-muted/40 shadow-sm opacity-0 animate-fade-in-up animation-delay-200 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-2xl focus-within:ring-2 focus-within:ring-primary/40"
           >
             {/* Project Image */}
-            <div className="relative aspect-video overflow-hidden">
+            <div className="relative aspect-video overflow-hidden bg-muted/60">
               <Image
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/5" />
+              <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/10" />
             </div>
 
             {/* Project Info */}
-            <div className="p-6">
-              <h3 className="mb-2 text-xl font-semibold text-foreground">
+            <div className="p-6 lg:p-7">
+              <h3 className="mb-2 text-xl font-semibold tracking-tight text-foreground">
                 {project.title}
               </h3>
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
@@ -97,7 +97,8 @@ export function ProjectsSection() {
               <div className="flex items-center gap-4">
                 <a
                   href={project.liveUrl}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  aria-label={`View project: ${project.title}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <ExternalLink className="h-4 w-4" />
                   View Project
