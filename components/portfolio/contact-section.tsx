@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import { SectionWrapper } from "./section-wrapper"
-import { Mail, MapPin, Send, Linkedin } from "lucide-react"
+import { Mail, MapPin, Send, Linkedin, MessageCircle } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
 
 const socialLinks = [
   {
@@ -10,9 +12,16 @@ const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/wasim-akram-turk",
   },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    href: "https://wa.me/923215794484",
+  },
 ]
 
 export function ContactSection() {
+  const { ref, isVisible } = useScrollAnimation(0.15)
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -43,7 +52,10 @@ export function ContactSection() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+      <div
+        ref={ref}
+        className="flex flex-col gap-12 lg:flex-row lg:gap-16"
+      >
         {/* Contact Form */}
         <div className="flex-1">
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -123,7 +135,14 @@ export function ContactSection() {
 
         {/* Contact Info */}
         <div className="flex flex-col gap-6 lg:w-[320px]">
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div
+            className={cn(
+              "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            )}
+          >
             <h3 className="mb-4 text-base font-semibold text-foreground">
               Contact Details
             </h3>
@@ -135,6 +154,13 @@ export function ContactSection() {
                 <Mail className="h-4 w-4 text-primary" />
                 eng.wasimakram@live.com
               </a>
+              <a
+                href="https://wa.me/923215794484"
+                className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <MessageCircle className="h-4 w-4 text-primary" />
+                +92 321 5794484
+              </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
                 Islamabad, Pakistan
@@ -142,7 +168,15 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <div
+            className={cn(
+              "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            )}
+            style={{ transitionDelay: "120ms" }}
+          >
             <h3 className="mb-4 text-base font-semibold text-foreground">
               Find Me Online
             </h3>
@@ -160,7 +194,15 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
+          <div
+            className={cn(
+              "rounded-xl border border-primary/20 bg-primary/5 p-6 transition-all duration-700 ease-out",
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            )}
+            style={{ transitionDelay: "240ms" }}
+          >
             <p className="text-sm font-medium text-foreground">
               Currently open to
             </p>

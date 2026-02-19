@@ -2,6 +2,8 @@
 
 import { SectionWrapper } from "./section-wrapper"
 import { Building2, Calendar } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
 
 const experiences = [
   {
@@ -22,6 +24,8 @@ const experiences = [
 ]
 
 export function ExperienceSection() {
+  const { ref, isVisible } = useScrollAnimation(0.15)
+
   return (
     <SectionWrapper id="experience">
       <div className="mb-12">
@@ -37,7 +41,7 @@ export function ExperienceSection() {
         </p>
       </div>
 
-      <div className="relative">
+      <div className="relative" ref={ref}>
         {/* Timeline line */}
         <div className="absolute top-0 bottom-0 left-4 w-px bg-border md:left-8" />
 
@@ -50,7 +54,15 @@ export function ExperienceSection() {
               </div>
 
               {/* Content card */}
-              <div className="flex-1 rounded-xl border border-border bg-card p-6 transition-all group-hover:border-primary/30 group-hover:shadow-md">
+              <div
+                className={cn(
+                  "flex-1 rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out group-hover:border-primary/30 group-hover:shadow-md",
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                )}
+                style={{ transitionDelay: `${index * 120}ms` }}
+              >
                 <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">

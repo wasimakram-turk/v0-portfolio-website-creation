@@ -1,6 +1,8 @@
 "use client"
 
 import { SectionWrapper } from "./section-wrapper"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
 
 const skillCategories = [
   {
@@ -42,6 +44,8 @@ const skillCategories = [
 ]
 
 export function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation(0.15)
+
   return (
     <SectionWrapper id="skills" className="bg-secondary/30">
       <div className="mb-12">
@@ -57,11 +61,20 @@ export function SkillsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {skillCategories.map((category) => (
+      <div
+        ref={ref}
+        className="grid grid-cols-1 gap-8 md:grid-cols-2"
+      >
+        {skillCategories.map((category, index) => (
           <div
             key={category.title}
-            className="rounded-xl border border-border bg-card p-6"
+            className={cn(
+              "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            )}
+            style={{ transitionDelay: `${index * 120}ms` }}
           >
             <h3 className="mb-5 text-lg font-semibold text-foreground">
               {category.title}
@@ -80,7 +93,9 @@ export function SkillsSection() {
                   <div className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
                     <div
                       className="h-full rounded-full bg-primary transition-all duration-700 ease-out"
-                      style={{ width: `${skill.level}%` }}
+                      style={{
+                        width: isVisible ? `${skill.level}%` : 0,
+                      }}
                     />
                   </div>
                 </div>

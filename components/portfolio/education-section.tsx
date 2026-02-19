@@ -2,6 +2,8 @@
 
 import { SectionWrapper } from "./section-wrapper"
 import { GraduationCap, Award } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
 
 const education = [
   {
@@ -21,6 +23,8 @@ const certifications = [
 ]
 
 export function EducationSection() {
+  const { ref, isVisible } = useScrollAnimation(0.15)
+
   return (
     <SectionWrapper id="education" className="bg-secondary/30">
       <div className="mb-12">
@@ -32,9 +36,12 @@ export function EducationSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div
+        ref={ref}
+        className="grid grid-cols-1 gap-8 lg:grid-cols-2"
+      >
         {/* Education */}
-        <div>
+          <div>
           <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
             <GraduationCap className="h-5 w-5 text-primary" />
             Academic Background
@@ -43,7 +50,13 @@ export function EducationSection() {
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-border bg-card p-6"
+                className={cn(
+                  "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                )}
+                style={{ transitionDelay: `${index * 120}ms` }}
               >
                 <div className="mb-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h4 className="text-base font-semibold text-foreground">
@@ -65,23 +78,33 @@ export function EducationSection() {
         </div>
 
         {/* Certifications */}
-        <div>
+          <div>
           <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
             <Award className="h-5 w-5 text-primary" />
             Core Competencies
           </h3>
-          <div className="rounded-xl border border-border bg-card p-6">
-            <ul className="flex flex-col gap-3">
-              {certifications.map((cert, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-sm text-muted-foreground"
-                >
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  {cert}
-                </li>
-              ))}
-            </ul>
+          <div>
+            <div
+              className={cn(
+                "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              )}
+              style={{ transitionDelay: "180ms" }}
+            >
+              <ul className="flex flex-col gap-3">
+                {certifications.map((cert, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-sm text-muted-foreground"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                    {cert}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

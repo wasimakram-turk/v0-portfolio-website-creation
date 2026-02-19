@@ -2,6 +2,8 @@
 
 import { SectionWrapper } from "./section-wrapper"
 import { Briefcase, Globe, Lightbulb, Users } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
 
 const highlights = [
   {
@@ -27,6 +29,8 @@ const highlights = [
 ]
 
 export function AboutSection() {
+  const { ref, isVisible } = useScrollAnimation(0.15)
+
   return (
     <SectionWrapper id="about">
       <div className="mb-12">
@@ -64,11 +68,20 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="grid flex-shrink-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:w-[380px]">
-          {highlights.map((item) => (
+        <div
+          ref={ref}
+          className="grid flex-shrink-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:w-[380px]"
+        >
+          {highlights.map((item, index) => (
             <div
               key={item.label}
-              className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md"
+              className={cn(
+                "group rounded-xl border border-border bg-card p-5 transition-all duration-700 ease-out hover:border-primary/30 hover:shadow-md",
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              )}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <item.icon className="mb-3 h-5 w-5 text-primary transition-transform group-hover:scale-110" />
               <p className="mb-1 text-sm font-semibold text-foreground">
