@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { ArrowDown, FileText, Mail } from "lucide-react"
+import { withBasePath } from "@/lib/utils"
 
 export function HeroSection() {
   return (
@@ -75,7 +76,7 @@ export function HeroSection() {
           <div className="group relative flex-shrink-0 opacity-0 animate-fade-in-up animation-delay-400">
             <div className="relative h-72 w-72 overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-br from-card via-card to-muted/60 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 md:h-96 md:w-96">
               <Image
-                src="/images/hero-illustration.jpg"
+                src={withBasePath("/images/hero-illustration.jpg")}
                 alt="Frontend developer workspace illustration"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

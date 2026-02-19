@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { SectionWrapper } from "./section-wrapper"
 import { ExternalLink } from "lucide-react"
+import { withBasePath } from "@/lib/utils"
 
 const projects = [
   {
@@ -64,7 +65,7 @@ export function ProjectsSection() {
             {/* Project Image */}
             <div className="relative aspect-video overflow-hidden bg-muted/60">
               <Image
-                src={project.image}
+                src={withBasePath(project.image)}
                 alt={`Screenshot of ${project.title}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
