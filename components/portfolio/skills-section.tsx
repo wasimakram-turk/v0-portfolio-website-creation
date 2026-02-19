@@ -69,7 +69,7 @@ export function SkillsSection() {
           <div
             key={category.title}
             className={cn(
-              "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out",
+              "rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-primary/30 hover:shadow-md",
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-6"

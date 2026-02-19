@@ -56,7 +56,7 @@ export function ExperienceSection() {
               {/* Content card */}
               <div
                 className={cn(
-                  "flex-1 rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out group-hover:border-primary/30 group-hover:shadow-md",
+                  "flex-1 rounded-xl border border-border bg-card p-6 transition-all duration-700 ease-out group-hover:-translate-y-1 group-hover:border-primary/30 group-hover:shadow-md",
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-6"

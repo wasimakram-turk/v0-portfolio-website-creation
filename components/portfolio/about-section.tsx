@@ -76,7 +76,7 @@ export function AboutSection() {
             <div
               key={item.label}
               className={cn(
-                "group rounded-xl border border-border bg-card p-5 transition-all duration-700 ease-out hover:border-primary/30 hover:shadow-md",
+                "group rounded-xl border border-border bg-card p-5 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-primary/30 hover:shadow-md",
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-6"
